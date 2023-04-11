@@ -12,5 +12,6 @@
     <color name="lightblue">#67CCED</color>
     <color name="orange">#FF9800</color>
     <color name="yellow">#FFED8F</color>
+    <color name="grey">#808080</color>
 
 </resources>
