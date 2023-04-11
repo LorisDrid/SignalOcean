@@ -31,9 +31,63 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:text="connexion"
+            android:text="Mon compte"
             android:textColor="@color/white"
             android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="421dp"
+        android:layout_height="75dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10px"
+            android:text="Prénom :"
+            android:backgrou
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+        <EditText
+            android:id="@+id/plain_text_input"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:background="@color/lightblue"
+            android:inputType="textPersonName"
+            android:textSize="25sp"
+            android:layout_marginRight="15dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="421dp"
+        android:layout_height="75dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10px"
+            android:text="Nom :"
+            android:backgrou
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+        <EditText
+            android:id="@+id/plain_text_input"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:background="@color/lightblue"
+            android:inputType="textPersonName"
+            android:textSize="25sp"
+            android:layout_marginRight="15dp"/>
 
     </LinearLayout>
 
@@ -84,7 +138,7 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:background="@color/lightblue"
-            android:inputType="password"
+            android:inputType="textPassword"
             android:textSize="25sp"
             android:layout_marginRight="15dp"/>
 
@@ -101,11 +155,11 @@
             android:id="@+id/mdp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/rounded_button"
             android:paddingHorizontal="20dp"
             android:paddingVertical="5dp"
-            android:text="Mot de passe oublié"
+            android:text="Modifier le mot de passe"
             android:textColor="@color/black"
             android:textSize="25sp"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -115,26 +169,27 @@
             />
 
         <Button
-            android:id="@+id/inscription"
+            android:id="@+id/mdp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="90dp"
             android:background="@drawable/rounded_button"
             android:paddingHorizontal="20dp"
             android:paddingVertical="5dp"
-            android:text="inscription"
+            android:text="Voir mon historique "
             android:textColor="@color/black"
             android:textSize="25sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/mdp" />
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
 
         <Button
             android:id="@+id/retour"
             android:layout_width="150dp"
             android:layout_height="40dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="130dp"
             android:layout_marginBottom="30dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="@color/black"
@@ -145,21 +200,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent" />
 
-        <Button
-            android:id="@+id/connexion"
-            android:layout_width="150dp"
-            android:layout_height="40dp"
-
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="30dp"
-            android:background="@drawable/rounded_button"
-            android:backgroundTint="@color/black"
-            android:text="Connexion"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

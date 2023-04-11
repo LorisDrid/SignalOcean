@@ -31,16 +31,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:text="connexion"
+            android:text="Alerte vent"
             android:textColor="@color/white"
             android:textSize="30sp" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="421dp"
-        android:layout_height="75dp"
-        android:background="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:background="@color/yellow"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -49,86 +49,44 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10px"
-            android:text="Adresse mail :"
-            android:backgrou
+            android:text="Un vent fort et régulier à une vitesse de 60 km/h en direction de l’Est, attentionà la vitesse en voile on se fait vite emporter par le vent !"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="25sp" />
-        <EditText
-            android:id="@+id/plain_text_input"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:background="@color/lightblue"
-            android:inputType="textEmailAddress"
-            android:textSize="25sp"
-            android:layout_marginRight="15dp"/>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="421dp"
-        android:layout_height="75dp"
-        android:background="@color/white"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="10px"
-            android:text="Mot de passe :"
-            android:textColor="@color/black"
-            android:textSize="25sp" />
-        <EditText
-            android:id="@+id/plain_text_input"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:background="@color/lightblue"
-            android:inputType="password"
-            android:textSize="25sp"
-            android:layout_marginRight="15dp"/>
-
-    </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
         android:gravity="top"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/white">
+
+
+        <ImageView
+            android:layout_width="278dp"
+            android:layout_height="192dp"
+            android:src="@drawable/alerte_vent"
+            tools:layout_editor_absoluteX="77dp"
+            tools:layout_editor_absoluteY="-15dp"></ImageView>
 
         <Button
-            android:id="@+id/mdp"
+            android:id="@+id/insérer_image"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginBottom="90dp"
+            android:paddingHorizontal="10dp"
             android:background="@drawable/rounded_button"
-            android:paddingHorizontal="20dp"
-            android:paddingVertical="5dp"
-            android:text="Mot de passe oublié"
-            android:textColor="@color/black"
+            android:backgroundTint="@color/black"
+            android:text="J'ai trouvé cela utile"
+            android:textAlignment="center"
+            android:textColor="@color/white"
             android:textSize="25sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-
-            />
-
-        <Button
-            android:id="@+id/inscription"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/rounded_button"
-            android:paddingHorizontal="20dp"
-            android:paddingVertical="5dp"
-            android:text="inscription"
-            android:textColor="@color/black"
-            android:textSize="25sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/mdp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
 
         <Button
             android:id="@+id/retour"
@@ -144,9 +102,8 @@
             android:textSize="25sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent" />
-
         <Button
-            android:id="@+id/connexion"
+            android:id="@+id/Suivant"
             android:layout_width="150dp"
             android:layout_height="40dp"
 
@@ -154,7 +111,7 @@
             android:layout_marginBottom="30dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="@color/black"
-            android:text="Connexion"
+            android:text="Poster"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="25sp"
