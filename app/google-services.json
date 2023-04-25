@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "780401093367",
+    "project_id": "ihm-bateaux",
+    "storage_bucket": "ihm-bateaux.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:780401093367:android:947d2aaee2b4fb30bd81f2",
+        "android_client_info": {
+          "package_name": "com.example.signalocean"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "780401093367-2qno4l37a1p35vou5ef72p9jebadpkg4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQHEpedki4VBQuqqZxbgcer0Firms0whk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "780401093367-2qno4l37a1p35vou5ef72p9jebadpkg4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
