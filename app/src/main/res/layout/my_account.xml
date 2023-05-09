@@ -50,7 +50,6 @@
             android:layout_gravity="center"
             android:layout_margin="10px"
             android:text="Prénom :"
-            android:backgrou
             android:textColor="@color/black"
             android:textSize="25sp" />
         <EditText
@@ -77,11 +76,10 @@
             android:layout_gravity="center"
             android:layout_margin="10px"
             android:text="Nom :"
-            android:backgrou
             android:textColor="@color/black"
             android:textSize="25sp" />
         <EditText
-            android:id="@+id/plain_text_input"
+            android:id="@+id/plain_text_input2"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:background="@color/lightblue"
@@ -104,11 +102,10 @@
             android:layout_gravity="center"
             android:layout_margin="10px"
             android:text="Adresse mail :"
-            android:backgrou
             android:textColor="@color/black"
             android:textSize="25sp" />
         <EditText
-            android:id="@+id/plain_text_input"
+            android:id="@+id/plain_text_input3"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:background="@color/lightblue"
@@ -134,7 +131,7 @@
             android:textColor="@color/black"
             android:textSize="25sp" />
         <EditText
-            android:id="@+id/plain_text_input"
+            android:id="@+id/plain_text_input4"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:background="@color/lightblue"
@@ -169,7 +166,7 @@
             />
 
         <Button
-            android:id="@+id/mdp"
+            android:id="@+id/historique"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="90dp"

@@ -50,7 +50,6 @@
             android:layout_gravity="center"
             android:layout_margin="10px"
             android:text="Adresse mail :"
-            android:backgrou
             android:textColor="@color/black"
             android:textSize="25sp" />
         <EditText
@@ -80,11 +79,11 @@
             android:textColor="@color/black"
             android:textSize="25sp" />
         <EditText
-            android:id="@+id/plain_text_input"
+            android:id="@+id/plain_text_input2"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:background="@color/lightblue"
-            android:inputType="password"
+            android:inputType=""
             android:textSize="25sp"
             android:layout_marginRight="15dp"/>
 

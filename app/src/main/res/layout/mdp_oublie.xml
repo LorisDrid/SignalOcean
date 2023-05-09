@@ -62,7 +62,6 @@
         android:layout_width="421dp"
         android:layout_height="75dp"
         android:background="@color/white"
-        android:margin
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -79,7 +78,7 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:background="@color/lightblue"
-            android:inputType="password_confirmer"
+            android:inputType=""
             android:textSize="25sp"
             android:layout_marginRight="15dp"/>
 
