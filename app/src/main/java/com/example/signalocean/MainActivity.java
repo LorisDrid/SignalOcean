@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
             CharSequence name = "Mon canal de notification";
             String description = "Description de mon canal de notification";
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
-            NotificationChannel channel = new NotificationChannel("Mon_channel_ID", name, importance);
+            NotificationChannel channel = new NotificationChannel(NotificationPost.CHANNEL_ID, name, importance);
             channel.setDescription(description);
 
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
