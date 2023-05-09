@@ -3,7 +3,7 @@ package com.example.signalocean;
 import android.widget.EditText;
 
 public class Inscription {
-    private void registerUser() {
+    /** private void registerUser() {
         EditText firstNameEditText = findViewById(R.id.first_name_edit_text);
         String firstName = firstNameEditText.getText().toString();
 
@@ -20,5 +20,5 @@ public class Inscription {
 
         // Enregistrer l'utilisateur dans la base de données ou envoyer les données au serveur
     }
-
+    **/
 }
