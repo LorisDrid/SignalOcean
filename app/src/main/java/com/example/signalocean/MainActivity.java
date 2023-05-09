@@ -3,8 +3,14 @@ package com.example.signalocean;
 import android.app.Activity;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -13,6 +19,15 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.accueil);
         createNotificationChannel();
+
+        Button connecter = (Button) findViewById(R.id.se_connecter);
+        connecter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Connexion.class);
+                startActivity(intent);
+            }
+        });
     }
     private void createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -26,4 +41,5 @@ public class MainActivity extends Activity {
             notificationManager.createNotificationChannel(channel);
         }
     }
+
 }
