@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -19,7 +20,8 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.accueil);
         createNotificationChannel();
-
+        Handler handler = new Handler();
+        handler.postDelayed(() -> NotificationPost.createNotification(MainActivity.this, "Titre de la notification", "Message de la notification"), 5000);
         Button connecter = (Button) findViewById(R.id.se_connecter);
         connecter.setOnClickListener(new View.OnClickListener() {
             @Override

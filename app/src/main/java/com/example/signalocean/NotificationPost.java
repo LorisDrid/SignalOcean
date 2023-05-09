@@ -2,6 +2,7 @@ package com.example.signalocean;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.util.Log;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
@@ -16,7 +17,7 @@ public class NotificationPost {
                 .setSmallIcon(R.drawable.alerte_vent)
                 .setContentTitle(title)
                 .setContentText(message)
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+                .setPriority(NotificationCompat.PRIORITY_MAX);
 
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
         if (ActivityCompat.checkSelfPermission(context, android.Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
@@ -30,6 +31,8 @@ public class NotificationPost {
             return;
         }
         notificationManager.notify(0, builder.build());
+        Log.d("MainActivity", "Notification created");
+
     }
 }
 
