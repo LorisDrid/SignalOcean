@@ -104,6 +104,7 @@
             android:background="#e6e6e5" />
 
         <Button
+            android:id="@+id/btn_poster"
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:background="@drawable/boutonposter"
