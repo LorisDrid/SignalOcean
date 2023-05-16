@@ -1,7 +1,7 @@
 package com.example.signalocean;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.preference.PreferenceManager;
+
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -17,9 +17,15 @@ import org.osmdroid.views.overlay.ItemizedOverlay;
 import org.osmdroid.views.overlay.ItemizedOverlayWithFocus;
 import org.osmdroid.views.overlay.OverlayItem;
 
+import android.os.Bundle;
+import android.preference.PreferenceManager;
+
+
+
+
 import java.util.ArrayList;
 
-public class maps extends AppCompatActivity {
+public class Maps extends AppCompatActivity {
     private MapView map;
 
 
@@ -29,7 +35,7 @@ public class maps extends AppCompatActivity {
         Configuration.getInstance().load(getApplicationContext(),
                 PreferenceManager.getDefaultSharedPreferences(getApplicationContext()));
         setContentView(R.layout.activity_maps);
-        map = findViewById(R.id.maps);
+        map = (MapView) findViewById(R.id.maps);
         map.setTileSource(TileSourceFactory.MAPNIK);//Utilisation du design patter factory
         map.setBuiltInZoomControls(true);//Zoomable
         GeoPoint startPoint = new GeoPoint(43.65020 , 7.00517);

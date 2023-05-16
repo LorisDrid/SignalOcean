@@ -30,6 +30,15 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
+
+        Button naviguer = (Button) findViewById(R.id.naviguer);
+        naviguer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Maps.class);
+                startActivity(intent);
+            }
+        });
     }
     private void createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -43,5 +52,6 @@ public class MainActivity extends Activity {
             notificationManager.createNotificationChannel(channel);
         }
     }
+
 
 }
