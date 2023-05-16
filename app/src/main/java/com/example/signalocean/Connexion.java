@@ -30,5 +30,24 @@ public class Connexion extends Activity {
                 startActivity(intent);
             }
         });
+
+        Button retour = (Button) findViewById(R.id.retour);
+        retour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Connexion.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button connexion = (Button) findViewById(R.id.connexion);
+
+        connexion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Connexion.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

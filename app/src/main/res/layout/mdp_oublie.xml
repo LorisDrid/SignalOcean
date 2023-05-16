@@ -94,11 +94,6 @@
         android:orientation="vertical"
         android:background="@color/white">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/captcha"></ImageView>
-
         <Button
             android:id="@+id/retour"
             android:layout_width="150dp"
