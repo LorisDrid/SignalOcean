@@ -14,13 +14,12 @@ import java.util.Optional;
 public class CreatePostActivity extends AppCompatActivity {
 
     private EditText editTitle;
-    private EditText editCategory;
     private EditText editText;
     private Button btnCreatePost;
     private String type;
     private Optional<Drawable> image;
 
-    private PostFactory postFactory;
+    private AbstractPostFactory abstractPostFactory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,30 +31,22 @@ public class CreatePostActivity extends AppCompatActivity {
             type = intent.getStringExtra("message");
         }
 
-        // Initialize views
         editTitle = findViewById(R.id.editTitle);
-        editCategory = findViewById(R.id.editCategory);
         editText = findViewById(R.id.editText);
         btnCreatePost = findViewById(R.id.btnCreatePost);
 
-        // Initialize PostFactory
-        postFactory = new PostFactory();
+        abstractPostFactory = AbstractPostFactory.getFactory(type);
 
-        // Set click listener for the create post button
         btnCreatePost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Retrieve the values entered by the user
                 String title = editTitle.getText().toString();
-                String category = editCategory.getText().toString();
                 String text = editText.getText().toString();
                 Optional<Drawable> image = Optional.empty();
 
-                // Create the post using PostFactory
-                Post post = postFactory.createPost(type ,title, category, text, image);
+                Post post = abstractPostFactory.createPost(type ,title, text, image);
+                MainActivity.getCurrentUser().getPosts().add(post);
 
-                // Do something with the created post
-                // ...
             }
         });
     }

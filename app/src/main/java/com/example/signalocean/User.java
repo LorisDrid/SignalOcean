@@ -8,6 +8,7 @@ public class User {
     private String email;
     private String password;
     private ArrayList<User> friends;
+    private ArrayList<Post> posts;
 
 
     public User(String firstName, String lastName, String email, String password) {
@@ -16,6 +17,7 @@ public class User {
         this.email = email;
         this.password = password;
         this.friends = new ArrayList<>();
+        this.posts = new ArrayList<>();
     }
 
     public String getFirstName() {
@@ -47,6 +49,10 @@ public class User {
         if(this.getFriends().contains(user)){
             this.getFriends().remove(user);
         }
+    }
+
+    public ArrayList<Post> getPosts() {
+        return posts;
     }
 }
 

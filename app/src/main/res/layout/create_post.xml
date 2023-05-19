@@ -23,22 +23,14 @@
 
         <EditText
             android:id="@+id/editTitle"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Titre"
             android:gravity="center" />
 
         <EditText
-            android:id="@+id/editCategory"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Catégorie"
-            android:gravity="center"
-            android:layout_marginTop="16dp" />
-
-        <EditText
             android:id="@+id/editText"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Texte"
             android:gravity="center"

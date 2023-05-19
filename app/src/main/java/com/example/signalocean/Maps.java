@@ -1,6 +1,8 @@
 package com.example.signalocean;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 
 import android.graphics.drawable.Drawable;
@@ -35,6 +37,7 @@ public class Maps extends AppCompatActivity {
         Configuration.getInstance().load(getApplicationContext(),
                 PreferenceManager.getDefaultSharedPreferences(getApplicationContext()));
         setContentView(R.layout.activity_maps);
+        ajouterPostFragment();
         map = (MapView) findViewById(R.id.maps);
         map.setTileSource(TileSourceFactory.MAPNIK);//Utilisation du design patter factory
         map.setBuiltInZoomControls(true);//Zoomable
@@ -75,5 +78,14 @@ public class Maps extends AppCompatActivity {
     public void onResume(){
         super.onResume();
         map.onResume();
+    }
+    private void ajouterPostFragment() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        PostFragment fragment = new PostFragment();
+        fragmentTransaction.add(R.id.fragmentContainer, fragment);
+
+        fragmentTransaction.commit();
     }
 }

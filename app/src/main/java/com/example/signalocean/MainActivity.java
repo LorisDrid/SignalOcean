@@ -15,13 +15,18 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
+    private static User currentUser;
+    public static User friendUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        currentUser = new User("Bob", "Lennon", "pyrobarbare@gmail.com","fanta123");
+        friendUser = new User("Homer", "Simpson", "homersimpson@outlook.fr", "donut3000");
         setContentView(R.layout.accueil);
         createNotificationChannel();
         Handler handler = new Handler();
-        handler.postDelayed(() -> NotificationPost.createNotification(MainActivity.this, "Titre de la notification", "Message de la notification"), 5000);
+        handler.postDelayed(() -> NotificationPost.createNotification(MainActivity.this, "notifiction test", "la notification a bien été envoyée"), 5000);
         Button connecter = (Button) findViewById(R.id.se_connecter);
         connecter.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,5 +58,7 @@ public class MainActivity extends Activity {
         }
     }
 
-
+    public static User getCurrentUser() {
+        return currentUser;
+    }
 }
