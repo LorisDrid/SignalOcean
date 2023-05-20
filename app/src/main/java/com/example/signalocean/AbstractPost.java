@@ -2,10 +2,12 @@ package com.example.signalocean;
 
 import android.graphics.drawable.Drawable;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
-public abstract class AbstractPost implements Post {
+public abstract class AbstractPost implements Post, Serializable {
     private String title;
     private String text;
     private Optional<Drawable> image;
@@ -15,6 +17,7 @@ public abstract class AbstractPost implements Post {
         this.title = title;
         this.text = text;
         this.image = image;
+        this.creationTime = LocalDateTime.now();
     }
 
     public String getTitle() {
@@ -31,5 +34,12 @@ public abstract class AbstractPost implements Post {
     public LocalDateTime getCreationTime() {
         return creationTime;
     }
+    @Override
+    public String toString() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        String formattedDate = getCreationTime().format(formatter);
+        return getTitle() + " - " + formattedDate;
+    }
+
 }
 

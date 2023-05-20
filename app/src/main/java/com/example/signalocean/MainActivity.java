@@ -22,6 +22,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         currentUser = new User("Bob", "Lennon", "pyrobarbare@gmail.com","fanta123");
+        Toast.makeText(MainActivity.this, "on create: ", Toast.LENGTH_SHORT).show();
         friendUser = new User("Homer", "Simpson", "homersimpson@outlook.fr", "donut3000");
         setContentView(R.layout.accueil);
         createNotificationChannel();
@@ -57,7 +58,6 @@ public class MainActivity extends Activity {
             notificationManager.createNotificationChannel(channel);
         }
     }
-
     public static User getCurrentUser() {
         return currentUser;
     }

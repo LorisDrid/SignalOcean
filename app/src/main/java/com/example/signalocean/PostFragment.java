@@ -32,8 +32,11 @@ public class PostFragment extends Fragment implements View.OnClickListener {
         view.findViewById(R.id.vent).setOnClickListener(this);
         view.findViewById(R.id.orage).setOnClickListener(this);
         view.findViewById(R.id.vague).setOnClickListener(this);
+        view.findViewById(R.id.user).setOnClickListener(this);
+        view.findViewById(R.id.home).setOnClickListener(this);
 
         Button btnCreatePost = view.findViewById(R.id.btn_poster);
+
         btnCreatePost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,6 +74,14 @@ public class PostFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.vague:
                 onImageButtonClicked("Vague");
+                break;
+            case R.id.user:
+                Intent intent = new Intent(getActivity(), UserInfo.class);
+                startActivity(intent);
+                break;
+            case R.id.home:
+                Intent intent2 = new Intent(getActivity(), MainActivity.class);
+                startActivity(intent2);
                 break;
         }
     }

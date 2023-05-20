@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -44,8 +45,13 @@ public class CreatePostActivity extends AppCompatActivity {
                 String text = editText.getText().toString();
                 Optional<Drawable> image = Optional.empty();
 
-                Post post = abstractPostFactory.createPost(type ,title, text, image);
+                AbstractPost post = abstractPostFactory.createPost(type ,title, text, image);
                 MainActivity.getCurrentUser().getPosts().add(post);
+                Toast.makeText(CreatePostActivity.this, "Post créé avec succès", Toast.LENGTH_SHORT).show();
+                int postCount = MainActivity.getCurrentUser().getPosts().size();
+                Toast.makeText(CreatePostActivity.this, "Nombre de posts : " + postCount, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(CreatePostActivity.this, Maps.class);
+                startActivity(intent);
 
             }
         });

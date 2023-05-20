@@ -5,7 +5,7 @@ import android.graphics.drawable.Drawable;
 import java.util.Optional;
 
 public class MaritimePostFactory extends AbstractPostFactory {
-    public Post createPost(String type, String title, String text, Optional<Drawable> image) {
+    public AbstractPost createPost(String type, String title, String text, Optional<Drawable> image) {
         switch (type) {
             case "Vent":
                 return new VentPost(title, text, image);
