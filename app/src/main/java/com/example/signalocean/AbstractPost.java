@@ -19,6 +19,7 @@ public abstract class AbstractPost implements Post, Serializable {
         this.image = image;
         this.creationTime = LocalDateTime.now();
     }
+    public abstract String getPostDetails();
 
     public String getTitle() {
         return title;

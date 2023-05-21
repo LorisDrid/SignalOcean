@@ -8,4 +8,9 @@ public class NuagePost extends AbstractPost {
     public NuagePost(String title, String text, Optional<Drawable> image) {
         super(title, text, image);
     }
+
+    @Override
+    public String getPostDetails() {
+        return null;
+    }
 }

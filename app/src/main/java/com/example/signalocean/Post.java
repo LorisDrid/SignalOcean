@@ -14,5 +14,7 @@ public interface Post{
     Optional<Drawable> getImage();
 
     LocalDateTime getCreationTime();
+
+    String getPostDetails();
 }
 

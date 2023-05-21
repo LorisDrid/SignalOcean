@@ -46,6 +46,8 @@
             android:screenOrientation="portrait" />
         <activity android:name=".UserInfo"
             android:exported="false"/>
+        <activity android:name=".PostDetailsActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>

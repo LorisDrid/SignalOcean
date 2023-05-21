@@ -8,7 +8,7 @@ public class User {
     private String email;
     private String password;
     private ArrayList<User> friends;
-    private ArrayList<Post> posts;
+    private ArrayList<AbstractPost> posts;
 
 
     public User(String firstName, String lastName, String email, String password) {
@@ -51,7 +51,7 @@ public class User {
         }
     }
 
-    public ArrayList<Post> getPosts() {
+    public ArrayList<AbstractPost> getPosts() {
         return posts;
     }
 }
