@@ -2,6 +2,7 @@ package com.example.signalocean;
 
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,10 +13,12 @@ public class PostDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.post_details_activity);
 
-        AbstractPost post = (AbstractPost) getIntent().getSerializableExtra("post");
+        AbstractPost post = getIntent().getParcelableExtra("post");
 
         TextView detailsTextView = findViewById(R.id.detailsTextView);
         detailsTextView.setText(post.getPostDetails());
+        Toast.makeText(PostDetailsActivity.this, String.valueOf(post instanceof SoleilPost), Toast.LENGTH_SHORT).show();
+
     }
 }
 

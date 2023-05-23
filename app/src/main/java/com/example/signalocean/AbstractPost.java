@@ -1,13 +1,14 @@
 package com.example.signalocean;
 
 import android.graphics.drawable.Drawable;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
-public abstract class AbstractPost implements Post, Serializable {
+public abstract class AbstractPost implements Post, Parcelable {
     private String title;
     private String text;
     private Optional<Drawable> image;
@@ -19,6 +20,7 @@ public abstract class AbstractPost implements Post, Serializable {
         this.image = image;
         this.creationTime = LocalDateTime.now();
     }
+
     public abstract String getPostDetails();
 
     public String getTitle() {
@@ -32,9 +34,11 @@ public abstract class AbstractPost implements Post, Serializable {
     public Optional<Drawable> getImage() {
         return image;
     }
+
     public LocalDateTime getCreationTime() {
         return creationTime;
     }
+
     @Override
     public String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
@@ -42,5 +46,41 @@ public abstract class AbstractPost implements Post, Serializable {
         return getTitle() + " - " + formattedDate;
     }
 
-}
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(title);
+        dest.writeString(text);
+        dest.writeValue(image.orElse(null));
+        dest.writeSerializable(creationTime);
+    }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    protected AbstractPost(Parcel in) {
+        title = in.readString();
+        text = in.readString();
+        image = Optional.ofNullable((Drawable) in.readValue(Drawable.class.getClassLoader()));
+        creationTime = (LocalDateTime) in.readSerializable();
+    }
+
+    public static final Parcelable.Creator<AbstractPost> CREATOR = new Parcelable.Creator<AbstractPost>() {
+        @Override
+        public AbstractPost createFromParcel(Parcel in) {
+            return new AbstractPost(in) {
+                @Override
+                public String getPostDetails() {
+                    // Implement this method in the derived classes
+                    return null;
+                }
+            };
+        }
+
+        @Override
+        public AbstractPost[] newArray(int size) {
+            return new AbstractPost[size];
+        }
+    };
+}

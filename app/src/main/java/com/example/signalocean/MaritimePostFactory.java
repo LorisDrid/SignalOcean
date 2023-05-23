@@ -15,4 +15,6 @@ public class MaritimePostFactory extends AbstractPostFactory {
                 throw new IllegalArgumentException("Type de post inconnu : " + type);
         }
     }
+
+
 }

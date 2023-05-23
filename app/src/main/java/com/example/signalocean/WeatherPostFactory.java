@@ -19,4 +19,7 @@ public class WeatherPostFactory extends AbstractPostFactory {
                 throw new IllegalArgumentException("Type de post inconnu : " + type);
         }
     }
+
+
 }
+

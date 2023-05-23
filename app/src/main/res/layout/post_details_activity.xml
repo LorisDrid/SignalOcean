@@ -15,6 +15,7 @@
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:textColor="@color/black"
             android:paddingBottom="8dp" />
 
         <!-- Ajoutez d'autres vues pour afficher les détails du post -->
