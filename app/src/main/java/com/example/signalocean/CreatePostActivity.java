@@ -2,20 +2,26 @@ package com.example.signalocean;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import org.osmdroid.util.GeoPoint;
+import org.osmdroid.views.MapView;
+import org.osmdroid.views.overlay.Marker;
 
 import java.util.Optional;
 
 public class CreatePostActivity extends AppCompatActivity {
 
+    private static final int SELECT_IMAGE_REQUEST_CODE = 1 ;
     private EditText editTitle;
     private EditText editText;
     private Button btnCreatePost;
@@ -23,12 +29,15 @@ public class CreatePostActivity extends AppCompatActivity {
     private Optional<Drawable> image;
     private GeoPoint location;
 
+    private Button btnReturn;
+    private MapView mapView;
+    private Button btnInsererImage;
     private AbstractPostFactory abstractPostFactory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.create_post);
+        setContentView(R.layout.poster_alerte);
 
         Intent intent = getIntent();
         if (intent.hasExtra("message")) {
@@ -38,6 +47,41 @@ public class CreatePostActivity extends AppCompatActivity {
         editTitle = findViewById(R.id.editTitle);
         editText = findViewById(R.id.editText);
         btnCreatePost = findViewById(R.id.btnCreatePost);
+        btnReturn = findViewById(R.id.retour);
+
+
+        btnInsererImage = findViewById(R.id.insérer_image);
+
+        btnInsererImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Open a dialog or activity to select an image from the storage
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("image/*");
+                startActivityForResult(intent, SELECT_IMAGE_REQUEST_CODE);
+            }
+        });
+        editText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editText.setText("");
+            }
+        });
+
+        editTitle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editTitle.setText("");
+            }
+        });
+
+        btnReturn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CreatePostActivity.this, Maps.class);
+                startActivity(intent);
+            }
+        });
 
         abstractPostFactory = AbstractPostFactory.getFactory(type);
 
@@ -59,6 +103,19 @@ public class CreatePostActivity extends AppCompatActivity {
 
             }
         });
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == SELECT_IMAGE_REQUEST_CODE && resultCode == RESULT_OK && data != null) {
+            // Retrieve the URI of the selected image
+            Uri selectedImageUri = data.getData();
+
+            // Display the image in the ImageView
+            ImageView imageView = findViewById(R.id.imageView);
+            imageView.setImageURI(selectedImageUri);
+        }
     }
 }
 
