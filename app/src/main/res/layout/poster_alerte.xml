@@ -27,8 +27,7 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/editTitle"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
@@ -39,17 +38,15 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="200dp"
         android:background="@color/yellow"
         android:gravity="center"
         android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/editText"
+        <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minHeight="80sp"
+            android:layout_height="80sp"
             android:layout_gravity="center"
             android:layout_margin="10px"
             android:text="Une petite description de votre alerte ?"
@@ -58,7 +55,6 @@
             android:textSize="25sp" />
 
     </LinearLayout>
-
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -73,7 +69,6 @@
             android:layout_width="232dp"
             android:layout_height="147dp"
             android:src="@drawable/appareil_photo"
-            android:layout_gravity="center"
             tools:layout_editor_absoluteX="89dp"
             tools:layout_editor_absoluteY="30dp"></ImageView>
 
@@ -108,7 +103,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent" />
         <Button
-            android:id="@+id/btnCreatePost"
+            android:id="@+id/Suivant"
             android:layout_width="150dp"
             android:layout_height="40dp"
 

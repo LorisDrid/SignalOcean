@@ -11,8 +11,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import org.osmdroid.util.GeoPoint;
-import org.osmdroid.views.MapView;
-import org.osmdroid.views.overlay.Marker;
 
 import java.util.Optional;
 
@@ -25,15 +23,12 @@ public class CreatePostActivity extends AppCompatActivity {
     private Optional<Drawable> image;
     private GeoPoint location;
 
-    private Button btnReturn;
-    private MapView mapView;
-
     private AbstractPostFactory abstractPostFactory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.poster_alerte);
+        setContentView(R.layout.create_post);
 
         Intent intent = getIntent();
         if (intent.hasExtra("message")) {
@@ -43,29 +38,6 @@ public class CreatePostActivity extends AppCompatActivity {
         editTitle = findViewById(R.id.editTitle);
         editText = findViewById(R.id.editText);
         btnCreatePost = findViewById(R.id.btnCreatePost);
-        btnReturn = findViewById(R.id.retour);
-
-        editText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                editText.setText("");
-            }
-        });
-
-        editTitle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                editTitle.setText("");
-            }
-        });
-
-        btnReturn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(CreatePostActivity.this, Maps.class);
-                startActivity(intent);
-            }
-        });
 
         abstractPostFactory = AbstractPostFactory.getFactory(type);
 
