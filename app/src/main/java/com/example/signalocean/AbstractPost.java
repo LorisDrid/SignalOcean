@@ -2,6 +2,8 @@ package com.example.signalocean;
 
 import android.graphics.drawable.Drawable;
 
+import org.osmdroid.util.GeoPoint;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -11,14 +13,17 @@ public abstract class AbstractPost implements Post, Serializable {
     private String title;
     private String text;
     private Optional<Drawable> image;
+    private GeoPoint location;
     private LocalDateTime creationTime;
 
-    public AbstractPost(String title, String text, Optional<Drawable> image) {
+    public AbstractPost(String title, String text, Optional<Drawable> image, GeoPoint location) {
         this.title = title;
         this.text = text;
         this.image = image;
         this.creationTime = LocalDateTime.now();
+        this.location= location;
     }
+
     public abstract String getPostDetails();
 
     public String getTitle() {

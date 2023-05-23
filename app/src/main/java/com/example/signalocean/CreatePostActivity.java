@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.osmdroid.util.GeoPoint;
+
 import java.util.Optional;
 
 public class CreatePostActivity extends AppCompatActivity {
@@ -19,6 +21,7 @@ public class CreatePostActivity extends AppCompatActivity {
     private Button btnCreatePost;
     private String type;
     private Optional<Drawable> image;
+    private GeoPoint location;
 
     private AbstractPostFactory abstractPostFactory;
 
@@ -45,7 +48,8 @@ public class CreatePostActivity extends AppCompatActivity {
                 String text = editText.getText().toString();
                 Optional<Drawable> image = Optional.empty();
 
-                AbstractPost post = abstractPostFactory.createPost(type ,title, text, image);
+
+                AbstractPost post = abstractPostFactory.createPost(type ,title, text, image,location);
                 MainActivity.getCurrentUser().getPosts().add(post);
                 Toast.makeText(CreatePostActivity.this, "Post créé avec succès", Toast.LENGTH_SHORT).show();
                 int postCount = MainActivity.getCurrentUser().getPosts().size();

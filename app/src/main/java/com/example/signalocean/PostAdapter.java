@@ -36,6 +36,7 @@ public class PostAdapter<T extends AbstractPost> extends ArrayAdapter<T> {
 
         return convertView;
     }
+
     public T getTypedItem(int position) {
         return itemType.cast(getItem(position));
     }
