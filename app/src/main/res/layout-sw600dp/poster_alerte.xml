@@ -9,19 +9,19 @@
     android:orientation="vertical">
 
     <TextView
-        android:layout_width="421dp"
+        android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_margin="0px"
-        android:gravity="center"
         android:background="@color/lightblue"
+        android:gravity="center"
         android:text="Signal'Ocean"
         android:textColor="@color/white"
         android:textSize="50dp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
 
     <LinearLayout
-        android:layout_width="421dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/lightblue"
         android:gravity="center"
@@ -31,14 +31,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:text="Alerte vent"
+            android:text="Poster une alerte"
             android:textColor="@color/white"
             android:textSize="30sp" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="@color/yellow"
         android:gravity="center"
@@ -46,10 +46,10 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="80sp"
             android:layout_gravity="center"
             android:layout_margin="10px"
-            android:text="Un vent fort et régulier à une vitesse de 60 km/h en direction de l’Est, attentionà la vitesse en voile on se fait vite emporter par le vent !"
+            android:text="Une petite description de votre alerte ?"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="25sp" />
@@ -66,22 +66,22 @@
 
 
         <ImageView
-            android:layout_width="278dp"
-            android:layout_height="192dp"
-            android:src="@drawable/alerte_vent"
-            tools:layout_editor_absoluteX="77dp"
-            tools:layout_editor_absoluteY="-15dp"></ImageView>
+            android:layout_width="305dp"
+            android:layout_height="232dp"
+            android:src="@drawable/appareil_photo"
+            tools:layout_editor_absoluteX="232dp"
+            tools:layout_editor_absoluteY="36dp"></ImageView>
 
         <Button
             android:id="@+id/insérer_image"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginLeft="52dp"
-            android:layout_marginBottom="92dp"
+            android:layout_marginLeft="256dp"
+            android:layout_marginBottom="276dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="@color/black"
             android:paddingHorizontal="10dp"
-            android:text="J'ai trouvé cela utile"
+            android:text="Insérer une image"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="25sp"

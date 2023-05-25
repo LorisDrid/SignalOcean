@@ -9,27 +9,27 @@
 
     <TextView
         android:id="@+id/entete"
-        android:layout_width="match_parent"
-        android:layout_height="205dp"
-        android:textColor="@color/black"
-        android:textSize="50dp"
-        android:gravity="center_horizontal"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="733dp"
+        android:layout_height="108dp"
         android:background="@color/yellow"
-        android:text="Signal'Ocean" />
+        android:gravity="center_horizontal"
+        android:text="Signal'Ocean"
+        android:textColor="@color/black"
+        android:textSize="70dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
+        android:layout_width="123dp"
+        android:layout_height="106dp"
+        android:layout_marginRight="16dp"
+        android:contentDescription="Description de l'image"
         android:foregroundGravity="center_horizontal"
         android:src="@drawable/logo"
-        android:contentDescription="Description de l'image"
-        app:layout_constraintRight_toRightOf="@id/entete"
-        android:layout_marginRight="150dp"
-        app:layout_constraintBottom_toBottomOf="@id/entete"/>
+        app:layout_constraintBottom_toBottomOf="@id/entete"
+        app:layout_constraintRight_toRightOf="@id/entete" />
 
     <Button
         android:id="@+id/naviguer"
@@ -45,13 +45,13 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/entete"
-        app:layout_constraintVertical_bias="0.244" />
+        app:layout_constraintVertical_bias="0.071" />
 
     <Button
         android:id="@+id/se_connecter"
         android:layout_width="177dp"
         android:layout_height="100dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginBottom="40dp"
         android:background="@drawable/rounded_button"
         android:gravity="center"
         android:text="Se Connecter"
@@ -59,8 +59,6 @@
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/naviguer"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintRight_toRightOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,19 +9,19 @@
     android:orientation="vertical">
 
     <TextView
-        android:layout_width="421dp"
+        android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_margin="0px"
-        android:gravity="center"
         android:background="@color/lightblue"
+        android:gravity="center"
         android:text="Signal'Ocean"
         android:textColor="@color/white"
         android:textSize="50dp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
 
     <LinearLayout
-        android:layout_width="421dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/lightblue"
         android:gravity="center"
@@ -31,16 +31,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:text="Alerte vent"
+            android:text="Modifier mot de passe"
             android:textColor="@color/white"
             android:textSize="30sp" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:background="@color/yellow"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@color/white"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -49,44 +49,85 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10px"
-            android:text="Un vent fort et régulier à une vitesse de 60 km/h en direction de l’Est, attentionà la vitesse en voile on se fait vite emporter par le vent !"
-            android:textAlignment="center"
+            android:text="Adresse mail :"
             android:textColor="@color/black"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/plain_text_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:background="@color/lightblue"
+            android:inputType="textEmailAddress"
             android:textSize="25sp" />
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10px"
+            android:text="Mot de passe :"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/plain_text_input2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:background="@color/lightblue"
+            android:inputType=""
+            android:textSize="25sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10px"
+            android:text="Confirmer :"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/plain_text_input3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:background="@color/lightblue"
+            android:inputType=""
+            android:textSize="25sp" />
+
+    </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="top"
         android:orientation="vertical"
         android:background="@color/white">
 
-
-        <ImageView
-            android:layout_width="278dp"
-            android:layout_height="192dp"
-            android:src="@drawable/alerte_vent"
-            tools:layout_editor_absoluteX="77dp"
-            tools:layout_editor_absoluteY="-15dp"></ImageView>
-
-        <Button
-            android:id="@+id/insérer_image"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_marginLeft="52dp"
-            android:layout_marginBottom="92dp"
-            android:background="@drawable/rounded_button"
-            android:backgroundTint="@color/black"
-            android:paddingHorizontal="10dp"
-            android:text="J'ai trouvé cela utile"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent" />
 
         <Button
             android:id="@+id/retour"
@@ -111,7 +152,7 @@
             android:layout_marginBottom="30dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="@color/black"
-            android:text="Poster"
+            android:text="Suivant"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="25sp"
