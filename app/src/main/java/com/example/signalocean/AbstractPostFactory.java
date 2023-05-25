@@ -2,10 +2,12 @@ package com.example.signalocean;
 
 import android.graphics.drawable.Drawable;
 
+import org.osmdroid.util.GeoPoint;
+
 import java.util.Optional;
 
 public abstract class AbstractPostFactory  {
-    public abstract AbstractPost createPost(String type, String title, String text, Optional<Drawable> image);
+    public abstract AbstractPost createPost(String type, String title, String text, Optional<Drawable> image, GeoPoint location);
 
     public static AbstractPostFactory getFactory(String type) {
         if (type.equals("Soleil") || type.equals("Nuage") || type.equals("Pluie") || type.equals("Orage")) {
