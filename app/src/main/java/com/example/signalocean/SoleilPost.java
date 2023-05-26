@@ -8,10 +8,5 @@ public class SoleilPost extends AbstractPost {
     public SoleilPost(String title, String text, Optional<Drawable> image) {
         super(title, text, image);
     }
-
-    @Override
-    public String getPostDetails() {
-        return getTitle() + "\n" + getText();
-    }
 }
 

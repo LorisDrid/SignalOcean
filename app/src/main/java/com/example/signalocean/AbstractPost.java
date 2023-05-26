@@ -21,7 +21,7 @@ public abstract class AbstractPost implements Post, Parcelable {
         this.creationTime = LocalDateTime.now();
     }
 
-    public abstract String getPostDetails();
+    public String getPostDetails(){return this.getTitle() + '\n' + getText();}
 
     public String getTitle() {
         return title;
@@ -72,8 +72,7 @@ public abstract class AbstractPost implements Post, Parcelable {
             return new AbstractPost(in) {
                 @Override
                 public String getPostDetails() {
-                    // Implement this method in the derived classes
-                    return null;
+                    return super.getPostDetails();
                 }
             };
         }

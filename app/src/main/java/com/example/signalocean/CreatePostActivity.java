@@ -46,7 +46,12 @@ public class CreatePostActivity extends AppCompatActivity {
                 Optional<Drawable> image = Optional.empty();
 
                 AbstractPost post = abstractPostFactory.createPost(type ,title, text, image);
+
                 MainActivity.getCurrentUser().getPosts().add(post);
+
+                Toast.makeText(CreatePostActivity.this, "dans user = " + MainActivity.getCurrentUser().getPosts().get(MainActivity.getCurrentUser().getPosts().size()-1) + String.valueOf(post instanceof SoleilPost), Toast.LENGTH_SHORT).show();
+
+
                 Toast.makeText(CreatePostActivity.this, "Post créé avec succès", Toast.LENGTH_SHORT).show();
                 int postCount = MainActivity.getCurrentUser().getPosts().size();
                 Toast.makeText(CreatePostActivity.this, "Nombre de posts : " + postCount, Toast.LENGTH_SHORT).show();

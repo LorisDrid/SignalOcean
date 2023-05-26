@@ -8,9 +8,4 @@ public class PluiePost extends AbstractPost {
     public PluiePost(String title, String text, Optional<Drawable> image) {
         super(title, text, image);
     }
-
-    @Override
-    public String getPostDetails() {
-        return null;
-    }
 }

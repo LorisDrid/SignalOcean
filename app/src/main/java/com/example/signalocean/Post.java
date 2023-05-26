@@ -15,6 +15,5 @@ public interface Post{
 
     LocalDateTime getCreationTime();
 
-    String getPostDetails();
 }
 
