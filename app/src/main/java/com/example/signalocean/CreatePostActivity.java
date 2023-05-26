@@ -49,7 +49,7 @@ public class CreatePostActivity extends AppCompatActivity {
 
                 MainActivity.getCurrentUser().getPosts().add(post);
 
-                Toast.makeText(CreatePostActivity.this, "dans user = " + MainActivity.getCurrentUser().getPosts().get(MainActivity.getCurrentUser().getPosts().size()-1) + String.valueOf(post instanceof SoleilPost), Toast.LENGTH_SHORT).show();
+                Toast.makeText(CreatePostActivity.this, "type post = " + post.getType(), Toast.LENGTH_SHORT).show();
 
 
                 Toast.makeText(CreatePostActivity.this, "Post créé avec succès", Toast.LENGTH_SHORT).show();

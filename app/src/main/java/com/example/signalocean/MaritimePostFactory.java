@@ -8,9 +8,9 @@ public class MaritimePostFactory extends AbstractPostFactory {
     public AbstractPost createPost(String type, String title, String text, Optional<Drawable> image) {
         switch (type) {
             case "Vent":
-                return new VentPost(title, text, image);
+                return new VentPost(type, title, text, image);
             case "Vague":
-                return new VaguePost(title, text, image);
+                return new VaguePost(type, title, text, image);
             default:
                 throw new IllegalArgumentException("Type de post inconnu : " + type);
         }

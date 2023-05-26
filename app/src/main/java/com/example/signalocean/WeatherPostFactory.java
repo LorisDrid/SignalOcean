@@ -8,13 +8,13 @@ public class WeatherPostFactory extends AbstractPostFactory {
     public AbstractPost createPost(String type, String title, String text, Optional<Drawable> image) {
         switch (type) {
             case "Soleil":
-                return new SoleilPost(title, text, image);
+                return new SoleilPost(type, title, text, image);
             case "Nuage":
-                return new NuagePost(title, text, image);
+                return new NuagePost(type, title, text, image);
             case "Pluie":
-                return new PluiePost(title, text, image);
+                return new PluiePost(type, title, text, image);
             case "Orage":
-                return new OragePost(title, text, image);
+                return new OragePost(type, title, text, image);
             default:
                 throw new IllegalArgumentException("Type de post inconnu : " + type);
         }

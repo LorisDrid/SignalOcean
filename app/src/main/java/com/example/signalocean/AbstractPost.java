@@ -11,17 +11,19 @@ import java.util.Optional;
 public abstract class AbstractPost implements Post, Parcelable {
     private String title;
     private String text;
+    private String type;
     private Optional<Drawable> image;
     private LocalDateTime creationTime;
 
-    public AbstractPost(String title, String text, Optional<Drawable> image) {
+    public AbstractPost(String type, String title, String text, Optional<Drawable> image) {
+        this.type = type;
         this.title = title;
         this.text = text;
         this.image = image;
         this.creationTime = LocalDateTime.now();
     }
 
-    public String getPostDetails(){return this.getTitle() + '\n' + getText();}
+    public String getPostDetails(){return getTitle() + '&' + getText();}
 
     public String getTitle() {
         return title;
@@ -29,6 +31,9 @@ public abstract class AbstractPost implements Post, Parcelable {
 
     public String getText() {
         return text;
+    }
+    public String getType(){
+        return type;
     }
 
     public Optional<Drawable> getImage() {
@@ -48,6 +53,7 @@ public abstract class AbstractPost implements Post, Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(type);
         dest.writeString(title);
         dest.writeString(text);
         dest.writeValue(image.orElse(null));
@@ -60,6 +66,7 @@ public abstract class AbstractPost implements Post, Parcelable {
     }
 
     protected AbstractPost(Parcel in) {
+        type = in.readString();
         title = in.readString();
         text = in.readString();
         image = Optional.ofNullable((Drawable) in.readValue(Drawable.class.getClassLoader()));
