@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public class SoleilPost extends AbstractPost {
     public SoleilPost(String type, String title, String text, Optional<Drawable> image, GeoPoint location) {
-        super(type, title, text, ,location);
+        super(type, title, text, image ,location);
     }
 }
 
