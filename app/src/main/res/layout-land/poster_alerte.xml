@@ -27,7 +27,8 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <TextView
+        <EditText
+            android:id="@+id/editTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
@@ -44,7 +45,8 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <TextView
+        <EditText
+            android:id="@+id/editText"
             android:layout_width="731dp"
             android:layout_height="89dp"
             android:layout_gravity="center"
@@ -66,18 +68,20 @@
 
 
         <ImageView
-            android:layout_width="328dp"
-            android:layout_height="191dp"
+            android:id="@+id/imageView"
+            android:layout_width="203dp"
+            android:layout_height="137dp"
             android:src="@drawable/appareil_photo"
-            tools:layout_editor_absoluteX="35dp"
-            tools:layout_editor_absoluteY="13dp"></ImageView>
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="64dp"
+            tools:layout_editor_absoluteY="16dp"></ImageView>
 
         <Button
             android:id="@+id/insérer_image"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginLeft="428dp"
-            android:layout_marginBottom="112dp"
+            android:layout_marginLeft="440dp"
+            android:layout_marginBottom="88dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="@color/black"
             android:paddingHorizontal="10dp"
@@ -92,7 +96,7 @@
             android:id="@+id/retour"
             android:layout_width="150dp"
             android:layout_height="40dp"
-            android:layout_marginLeft="400dp"
+            android:layout_marginLeft="320dp"
             android:layout_marginBottom="16dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="@color/black"
@@ -104,7 +108,7 @@
             app:layout_constraintLeft_toLeftOf="parent" />
 
         <Button
-            android:id="@+id/Suivant"
+            android:id="@+id/btnCreatePost"
             android:layout_width="150dp"
             android:layout_height="40dp"
 

@@ -18,10 +18,12 @@ import androidx.fragment.app.Fragment;
 public class PostFragment extends Fragment implements View.OnClickListener {
 
     private TextView messageTextView;
+    private MainActivity parentActivity;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_poster, container, false);
+
         Log.d(TAG, "Le fragment est ajouté avec succès");
 
         messageTextView = view.findViewById(R.id.message);

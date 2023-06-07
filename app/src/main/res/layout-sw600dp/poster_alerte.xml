@@ -27,7 +27,8 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <TextView
+        <EditText
+            android:id="@+id/editTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
@@ -44,7 +45,8 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <TextView
+        <EditText
+            android:id="@+id/editText"
             android:layout_width="wrap_content"
             android:layout_height="80sp"
             android:layout_gravity="center"
@@ -66,18 +68,21 @@
 
 
         <ImageView
+            android:id="@+id/imageView"
             android:layout_width="305dp"
-            android:layout_height="232dp"
+            android:layout_height="239dp"
+            android:layout_marginStart="240dp"
+            android:layout_marginBottom="204dp"
             android:src="@drawable/appareil_photo"
-            tools:layout_editor_absoluteX="232dp"
-            tools:layout_editor_absoluteY="36dp"></ImageView>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"></ImageView>
 
         <Button
             android:id="@+id/insérer_image"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginLeft="256dp"
-            android:layout_marginBottom="276dp"
+            android:layout_marginLeft="264dp"
+            android:layout_marginBottom="112dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="@color/black"
             android:paddingHorizontal="10dp"
@@ -103,7 +108,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent" />
         <Button
-            android:id="@+id/Suivant"
+            android:id="@+id/btnCreatePost"
             android:layout_width="150dp"
             android:layout_height="40dp"
 
