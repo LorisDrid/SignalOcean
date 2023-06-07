@@ -14,7 +14,7 @@ public class NotificationPost {
 
     public static void createNotification(Context context, String title, String message) {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
-                .setSmallIcon(R.drawable.alerte_vent)
+                .setSmallIcon(R.drawable.appareil_photo)
                 .setContentTitle(title)
                 .setContentText(message)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
