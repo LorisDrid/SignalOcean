@@ -20,6 +20,7 @@ public abstract class AbstractPost implements Post, Parcelable {
     private LocalDateTime creationTime;
 
     public AbstractPost(String type, String title, String text, Optional<Drawable> image, GeoPoint location) {
+        this.type = type;
         this.title = title;
         this.text = text;
         this.image = image;
@@ -42,6 +43,9 @@ public abstract class AbstractPost implements Post, Parcelable {
 
     public Optional<Drawable> getImage() {
         return image;
+    }
+    public void setImage(Optional<Drawable> image){
+        this.image = image;
     }
 
     public LocalDateTime getCreationTime() {

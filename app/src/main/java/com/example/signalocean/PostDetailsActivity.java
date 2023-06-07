@@ -1,12 +1,18 @@
 package com.example.signalocean;
 
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Optional;
 
 public class PostDetailsActivity extends AppCompatActivity {
 
@@ -15,9 +21,21 @@ public class PostDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.post_details_activity);
         AbstractPost post = getIntent().getParcelableExtra("post");
-
         updateBackground(post);
-        setPostText(post);
+        setPostInfos(post);
+        boolean isImageEmpty = post.getImage().equals(Optional.empty());
+        String toastMessage = "Is Image Empty: " + String.valueOf(isImageEmpty);
+        Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show();
+        Button button = findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Redirection vers une autre activité
+                Intent intent = new Intent(PostDetailsActivity.this, Maps.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void updateBackground(AbstractPost post) {
@@ -38,15 +56,20 @@ public class PostDetailsActivity extends AppCompatActivity {
         }
     }
 
-    private void setPostText(AbstractPost post){
-        String postDetails = post.getPostDetails();
-        String[] parts = postDetails.split("&"); // Diviser la chaîne en utilisant le caractère "&"
-        String title = parts[0].trim(); // Récupérer la partie du titre (première partie)
-        String text = parts[1].trim(); // Récupérer la partie du texte (deuxième partie)
-
+    private void setPostInfos(AbstractPost post){
+        String postTitle = post.getTitle();
+        String postText = post.getText();
+        Optional<Drawable> image = post.getImage();
         TextView titleTextView = findViewById(R.id.titleTextView);
         TextView detailsTextView = findViewById(R.id.detailsTextView);
-        titleTextView.setText(title);
-        detailsTextView.setText(text);
+        titleTextView.setText(postTitle);
+        detailsTextView.setText(postText);
+        ImageView postImageView = findViewById(R.id.postImageView);
+        if (image.isPresent()) {
+            postImageView.setVisibility(View.VISIBLE); // Rendre l'ImageView visible
+            postImageView.setImageDrawable(image.get());
+        } else {
+            postImageView.setVisibility(View.GONE); // Rendre l'ImageView invisible (disparaître)
+        }
     }
 }
