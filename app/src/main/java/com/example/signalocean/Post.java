@@ -1,6 +1,7 @@
 package com.example.signalocean;
 
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -11,7 +12,7 @@ public interface Post{
 
     String getText();
 
-    Optional<Drawable> getImage();
+    Optional<Uri> getImage();
 
     LocalDateTime getCreationTime();
 

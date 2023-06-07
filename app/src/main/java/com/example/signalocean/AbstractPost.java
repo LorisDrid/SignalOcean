@@ -1,12 +1,11 @@
 package com.example.signalocean;
 
-import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
 
 import org.osmdroid.util.GeoPoint;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
@@ -15,20 +14,22 @@ public abstract class AbstractPost implements Post, Parcelable {
     private String title;
     private String text;
     private String type;
-    private Optional<Drawable> image;
+    private Optional<Uri> image;
     private GeoPoint location;
     private LocalDateTime creationTime;
 
-    public AbstractPost(String type, String title, String text, Optional<Drawable> image, GeoPoint location) {
+    public AbstractPost(String type, String title, String text, Optional<Uri> image, GeoPoint location) {
         this.type = type;
         this.title = title;
         this.text = text;
         this.image = image;
         this.creationTime = LocalDateTime.now();
-        this.location= location;
+        this.location = location;
     }
 
-    public String getPostDetails(){return getTitle() + '&' + getText();}
+    public String getPostDetails() {
+        return getTitle() + '&' + getText();
+    }
 
     public String getTitle() {
         return title;
@@ -37,14 +38,16 @@ public abstract class AbstractPost implements Post, Parcelable {
     public String getText() {
         return text;
     }
-    public String getType(){
+
+    public String getType() {
         return type;
     }
 
-    public Optional<Drawable> getImage() {
+    public Optional<Uri> getImage() {
         return image;
     }
-    public void setImage(Optional<Drawable> image){
+
+    public void setImage(Optional<Uri> image) {
         this.image = image;
     }
 
@@ -77,7 +80,7 @@ public abstract class AbstractPost implements Post, Parcelable {
         type = in.readString();
         title = in.readString();
         text = in.readString();
-        image = Optional.ofNullable((Drawable) in.readValue(Drawable.class.getClassLoader()));
+        image = Optional.ofNullable((Uri) in.readValue(Uri.class.getClassLoader()));
         creationTime = (LocalDateTime) in.readSerializable();
     }
 

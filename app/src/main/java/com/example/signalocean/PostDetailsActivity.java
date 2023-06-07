@@ -2,6 +2,7 @@ package com.example.signalocean;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -59,7 +60,7 @@ public class PostDetailsActivity extends AppCompatActivity {
     private void setPostInfos(AbstractPost post){
         String postTitle = post.getTitle();
         String postText = post.getText();
-        Optional<Drawable> image = post.getImage();
+        Optional<Uri> image = post.getImage();
         TextView titleTextView = findViewById(R.id.titleTextView);
         TextView detailsTextView = findViewById(R.id.detailsTextView);
         titleTextView.setText(postTitle);
@@ -67,7 +68,7 @@ public class PostDetailsActivity extends AppCompatActivity {
         ImageView postImageView = findViewById(R.id.postImageView);
         if (image.isPresent()) {
             postImageView.setVisibility(View.VISIBLE); // Rendre l'ImageView visible
-            postImageView.setImageDrawable(image.get());
+            postImageView.setImageURI(image.get());
         } else {
             postImageView.setVisibility(View.GONE); // Rendre l'ImageView invisible (disparaître)
         }

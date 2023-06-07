@@ -1,13 +1,13 @@
 package com.example.signalocean;
 
-import android.graphics.drawable.Drawable;
+import android.net.Uri;
 
 import org.osmdroid.util.GeoPoint;
 
 import java.util.Optional;
 
 public class WeatherPostFactory extends AbstractPostFactory {
-    public AbstractPost createPost(String type, String title, String text, Optional<Drawable> image, GeoPoint location) {
+    public AbstractPost createPost(String type, String title, String text, Optional<Uri> image, GeoPoint location) {
         switch (type) {
             case "Soleil":
                 return new SoleilPost(type, title, text, image, location);

@@ -27,6 +27,7 @@ public class CreatePostActivity extends AppCompatActivity {
     private Button btnCreatePost;
     private String type;
     private Optional<Drawable> image;
+    private Uri imageUri;
     private GeoPoint location;
 
     private Button btnReturn;
@@ -90,10 +91,9 @@ public class CreatePostActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String title = editTitle.getText().toString();
                 String text = editText.getText().toString();
-                Optional<Drawable> image = Optional.empty();
 
 
-                AbstractPost post = abstractPostFactory.createPost(type ,title, text, image,location);
+                AbstractPost post = abstractPostFactory.createPost(type ,title, text, Optional.ofNullable(CreatePostActivity.this.imageUri),location);
                 MainActivity.getCurrentUser().getPosts().add(post);
 
                 Toast.makeText(CreatePostActivity.this, "type post = " + post.getType(), Toast.LENGTH_SHORT).show();
@@ -114,11 +114,11 @@ public class CreatePostActivity extends AppCompatActivity {
 
         if (requestCode == SELECT_IMAGE_REQUEST_CODE && resultCode == RESULT_OK && data != null) {
             // Retrieve the URI of the selected image
-            Uri selectedImageUri = data.getData();
+            this.imageUri = data.getData();
 
             // Display the image in the ImageView
             ImageView imageView = findViewById(R.id.imageView);
-            imageView.setImageURI(selectedImageUri);
+            imageView.setImageURI(this.imageUri);
         }
     }
 }
