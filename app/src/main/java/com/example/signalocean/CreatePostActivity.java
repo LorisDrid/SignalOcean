@@ -40,6 +40,7 @@ public class CreatePostActivity extends AppCompatActivity {
     private MapView mapView;
     private Button btnInsererImage;
     private String type;
+
     private Uri imageUri;
     private GeoPoint location;
 
@@ -126,6 +127,7 @@ public class CreatePostActivity extends AppCompatActivity {
                     } else {
                         requestStoragePermission();
                     }
+                    openGallery();
                     break;
                 case 1:
                     // Camera option selected
@@ -198,7 +200,6 @@ public class CreatePostActivity extends AppCompatActivity {
             }
         }
     }
-
     private Uri getImageUri(Bitmap bitmap) {
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
@@ -212,16 +213,10 @@ public class CreatePostActivity extends AppCompatActivity {
         if (requestCode == REQUEST_STORAGE_PERMISSION) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 openGallery();
-            } else {
-                Toast.makeText(this, "Permission refusée. Impossible d'accéder à la galerie.", Toast.LENGTH_SHORT).show();
-                // Vous pouvez également afficher une boîte de dialogue personnalisée pour expliquer l'importance de la permission et rediriger l'utilisateur vers les paramètres pour la modifier.
             }
         } else if (requestCode == REQUEST_CAMERA_PERMISSION) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 openCamera();
-            } else {
-                Toast.makeText(this, "Permission refusée. Impossible d'accéder à la caméra.", Toast.LENGTH_SHORT).show();
-                // Vous pouvez également afficher une boîte de dialogue personnalisée pour expliquer l'importance de la permission et rediriger l'utilisateur vers les paramètres pour la modifier.
             }
         }
     }
