@@ -3,6 +3,7 @@ package com.example.signalocean;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.Marker;
 
+import java.io.ByteArrayOutputStream;
 import java.util.Optional;
 public class CreatePostActivity extends AppCompatActivity {
 
@@ -38,7 +40,6 @@ public class CreatePostActivity extends AppCompatActivity {
     private MapView mapView;
     private Button btnInsererImage;
     private String type;
-    private Optional<Drawable> image;
     private Uri imageUri;
     private GeoPoint location;
 
@@ -186,13 +187,23 @@ public class CreatePostActivity extends AppCompatActivity {
             Bundle extras = data.getExtras();
             if (extras != null && extras.containsKey("data")) {
                 // Get the image bitmap
-                Drawable imageDrawable = (Drawable) extras.get("data");
+                Bitmap imageBitmap = (Bitmap) extras.get("data");
+
+                // Convert the bitmap to URI
+                this.imageUri = getImageUri(imageBitmap);
 
                 // Display the image in the ImageView
                 ImageView imageView = findViewById(R.id.imageView);
-                imageView.setImageDrawable(imageDrawable);
+                imageView.setImageURI(this.imageUri);
             }
         }
+    }
+
+    private Uri getImageUri(Bitmap bitmap) {
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+        String path = MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, "Title", null);
+        return Uri.parse(path);
     }
 
     @Override
