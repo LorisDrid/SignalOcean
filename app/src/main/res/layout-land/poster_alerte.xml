@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="0px"
+        android:background="@color/lightblue"
+        android:gravity="center"
+        android:text="Signal'Ocean"
+        android:textColor="@color/white"
+        android:textSize="50dp"
+        android:textStyle="bold" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/lightblue"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="Poster une alerte"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="77dp"
+        android:background="@color/yellow"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="731dp"
+            android:layout_height="89dp"
+            android:layout_gravity="center"
+            android:layout_margin="10px"
+            android:text="\nUne petite description de votre alerte ?"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="top"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+
+        <ImageView
+            android:layout_width="328dp"
+            android:layout_height="191dp"
+            android:src="@drawable/appareil_photo"
+            tools:layout_editor_absoluteX="35dp"
+            tools:layout_editor_absoluteY="13dp"></ImageView>
+
+        <Button
+            android:id="@+id/insérer_image"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="428dp"
+            android:layout_marginBottom="112dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/black"
+            android:paddingHorizontal="10dp"
+            android:text="Insérer une image"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <Button
+            android:id="@+id/retour"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="400dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/black"
+            android:text="Retour"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <Button
+            android:id="@+id/Suivant"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/black"
+            android:text="Poster"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
+
+

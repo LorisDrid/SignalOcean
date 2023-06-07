@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:layout_margin="0px"
+        android:background="@color/lightblue"
+        android:gravity="center"
+        android:text="Signal'Ocean"
+        android:textColor="@color/white"
+        android:textSize="50dp"
+        android:textStyle="bold" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/lightblue"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="Modifier le mot de passe"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="731dp"
+            android:layout_height="80sp"
+            android:layout_gravity="center"
+            android:layout_margin="10px"
+            android:text="Entrez votre e-mail, vous recevrez un lien :"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="742dp"
+        android:layout_height="75dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10px"
+            android:text="Confirmer :"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/plain_text_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:background="@color/lightblue"
+            android:inputType=""
+            android:textSize="25sp" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="top"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <Button
+            android:id="@+id/retour"
+            android:layout_width="199dp"
+            android:layout_height="61dp"
+            android:layout_marginLeft="104dp"
+            android:layout_marginBottom="28dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/black"
+            android:text="Retour"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <Button
+            android:id="@+id/Suivant"
+            android:layout_width="199dp"
+            android:layout_height="61dp"
+
+            android:layout_marginRight="88dp"
+            android:layout_marginBottom="28dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/black"
+            android:text="Suivant"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
+
+
