@@ -101,12 +101,12 @@ public class CreatePostActivity extends AppCompatActivity {
                 String text = editText.getText().toString();
 
                 AbstractPost post = abstractPostFactory.createPost(type, title, text, Optional.ofNullable(CreatePostActivity.this.imageUri), location);
-                MainActivity.getCurrentUser().getPosts().add(post);
+                MainActivity.userManager.getCurrentUser().addPost(post, CreatePostActivity.this);
 
                 Toast.makeText(CreatePostActivity.this, "type post = " + post.getType(), Toast.LENGTH_SHORT).show();
 
                 Toast.makeText(CreatePostActivity.this, "Post créé avec succès", Toast.LENGTH_SHORT).show();
-                int postCount = MainActivity.getCurrentUser().getPosts().size();
+                int postCount = MainActivity.userManager.getCurrentUser().getPosts().size();
                 Toast.makeText(CreatePostActivity.this, "Nombre de posts : " + postCount, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(CreatePostActivity.this, Maps.class);
                 startActivity(intent);

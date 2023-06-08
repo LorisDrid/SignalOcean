@@ -21,7 +21,7 @@ public class UserInfo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_info);
-        this.currentUser = MainActivity.getCurrentUser();
+        this.currentUser = MainActivity.userManager.getCurrentUser();
 
         listView = findViewById(R.id.listView);
         ArrayList<AbstractPost> posts = currentUser.getPosts();

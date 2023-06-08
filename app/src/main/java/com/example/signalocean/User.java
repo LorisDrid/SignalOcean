@@ -1,5 +1,7 @@
 package com.example.signalocean;
 
+import android.content.Context;
+
 import java.util.ArrayList;
 
 public class User {
@@ -40,10 +42,14 @@ public class User {
         return this.friends;
     }
 
-    public void addFriend(User user){
+    public void addFriend(User user, Context context){
         if(!this.getFriends().contains(user) && !this.equals(user)){
             this.getFriends().add(user);
         }
+        String notificationTitle = "Demande d'ami";
+        String notificationMessage = this.getFirstName() + " " + this.getLastName() + " vous as ajouté en ami !";
+
+        Notification.createNotification(context, notificationTitle, notificationMessage, NotificationChannelManager.CHANNEL_ID_FRIEND_REQUEST);
     }
     public void removeFriend(User user){
         if(this.getFriends().contains(user)){
@@ -53,6 +59,16 @@ public class User {
 
     public ArrayList<AbstractPost> getPosts() {
         return posts;
+    }
+    public void addPost(AbstractPost post, Context context) {
+        posts.add(post);
+
+        for (User friend : this.getFriends()) {
+            String notificationTitle = "Nouveau post de " + friend.getFirstName() + " " + friend.getLastName();
+            String notificationMessage = "Un ami a publié un nouveau post.";
+
+            Notification.createNotification(context, notificationTitle, notificationMessage, NotificationChannelManager.CHANNEL_ID_NEW_POST);
+        }
     }
 }
 

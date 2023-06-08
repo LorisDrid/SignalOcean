@@ -14,21 +14,41 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import org.osmdroid.util.GeoPoint;
+
+import java.util.Optional;
+
 public class MainActivity extends Activity {
 
-    private static User currentUser;
-    public static User friendUser;
+    public static UserManager userManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        currentUser = new User("Bob", "Lennon", "pyrobarbare@gmail.com","fanta123");
-        Toast.makeText(MainActivity.this, "on create: ", Toast.LENGTH_SHORT).show();
-        friendUser = new User("Homer", "Simpson", "homersimpson@outlook.fr", "donut3000");
+        userManager = new UserManager();
         setContentView(R.layout.accueil);
-        createNotificationChannel();
+        NotificationChannelManager.createNotificationChannels(MainActivity.this);
         Handler handler = new Handler();
-        handler.postDelayed(() -> NotificationPost.createNotification(MainActivity.this, "notifiction test", "la notification a bien été envoyée"), 5000);
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                String postTitle = "Nouveau post";
+                String postText = "Contenu du nouveau post";
+                AbstractPost post = new SoleilPost("Soleil", postTitle, postText, Optional.empty(), new GeoPoint(0.0, 0.0));
+                User userTest = userManager.getUserByEmail("john.doe@example.com");
+                userTest.addFriend(userManager.getCurrentUser(), MainActivity.this);
+
+                Handler handler2 = new Handler();
+                handler2.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        userTest.addPost(post, MainActivity.this);
+                    }
+                }, 10000); // Délai supplémentaire de 2 secondes
+            }
+        }, 1000);
+
+        Toast.makeText(MainActivity.this, "notif ", Toast.LENGTH_SHORT).show();
         Button connecter = (Button) findViewById(R.id.se_connecter);
         connecter.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,20 +67,5 @@ public class MainActivity extends Activity {
             }
         });
 
-    }
-    private void createNotificationChannel() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            CharSequence name = "Mon canal de notification";
-            String description = "Description de mon canal de notification";
-            int importance = NotificationManager.IMPORTANCE_DEFAULT;
-            NotificationChannel channel = new NotificationChannel(NotificationPost.CHANNEL_ID, name, importance);
-            channel.setDescription(description);
-
-            NotificationManager notificationManager = getSystemService(NotificationManager.class);
-            notificationManager.createNotificationChannel(channel);
-        }
-    }
-    public static User getCurrentUser() {
-        return currentUser;
     }
 }

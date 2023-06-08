@@ -22,13 +22,15 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@color/black"
+            android:textAllCaps="true"
             android:paddingBottom="8dp"
             android:gravity="center" />
+
 
         <ImageView
             android:id="@+id/postImageView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="400dp"
             android:visibility="visible"
         />
 
@@ -39,9 +41,14 @@
             android:layout_weight="1"
             android:textSize="18sp"
             android:textStyle="normal"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:paddingBottom="8dp"
-            android:gravity="center" />
+            android:gravity="center"
+            android:shadowColor="@color/black"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowRadius="10"/>
+
         <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
