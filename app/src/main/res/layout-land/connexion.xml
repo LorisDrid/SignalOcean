@@ -55,7 +55,7 @@
             android:textSize="25sp" />
 
         <EditText
-            android:id="@+id/plain_text_input"
+            android:id="@+id/emailConnexion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="15dp"
@@ -82,12 +82,12 @@
             android:textSize="25sp" />
 
         <EditText
-            android:id="@+id/plain_text_input2"
+            android:id="@+id/motdepasseConnexion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="15dp"
+            android:inputType="textPassword"
             android:background="@color/lightblue"
-            android:inputType=""
             android:textSize="25sp" />
 
     </LinearLayout>

@@ -6,15 +6,9 @@ import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.Toast;
-
-import com.google.firebase.FirebaseApp;
 
 public class MainActivity extends Activity {
 
@@ -28,7 +22,6 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         currentUser = new User("Bob", "Lennon", "pyrobarbare@gmail.com","fanta123");
-        Toast.makeText(MainActivity.this, "on create: ", Toast.LENGTH_SHORT).show();
         friendUser = new User("Homer", "Simpson", "homersimpson@outlook.fr", "donut3000");
         setContentView(R.layout.accueil);
         createNotificationChannel();
