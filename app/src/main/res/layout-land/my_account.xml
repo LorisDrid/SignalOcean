@@ -129,16 +129,19 @@
             android:id="@+id/mdp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="264dp"
+            android:layout_marginTop="32dp"
             android:layout_marginRight="244dp"
             android:background="@drawable/rounded_button"
             android:paddingHorizontal="20dp"
             android:paddingVertical="5dp"
+
             android:text="Mot de passé oublié"
             android:textColor="@color/black"
-
             android:textSize="15sp"
             app:layout_constraintRight_toRightOf="parent"
-            tools:layout_editor_absoluteY="29dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/retour"
