@@ -80,7 +80,7 @@
             android:id="@+id/insérer_image"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginLeft="440dp"
+            android:layout_marginLeft="372dp"
             android:layout_marginBottom="88dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="@color/black"

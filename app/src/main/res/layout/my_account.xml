@@ -49,41 +49,15 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10px"
-            android:text="Prénom :"
+            android:text="Nom/Prénom :"
             android:textColor="@color/black"
             android:textSize="25sp" />
         <EditText
-            android:id="@+id/plain_text_input"
+            android:id="@+id/displayName"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:background="@color/lightblue"
-            android:inputType="textPersonName"
-            android:textSize="25sp"
-            android:layout_marginRight="15dp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="421dp"
-        android:layout_height="75dp"
-        android:background="@color/white"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="10px"
-            android:text="Nom :"
-            android:textColor="@color/black"
-            android:textSize="25sp" />
-        <EditText
-            android:id="@+id/plain_text_input2"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:background="@color/lightblue"
-            android:inputType="textPersonName"
+            android:inputType=""
             android:textSize="25sp"
             android:layout_marginRight="15dp"/>
 
@@ -105,7 +79,7 @@
             android:textColor="@color/black"
             android:textSize="25sp" />
         <EditText
-            android:id="@+id/plain_text_input3"
+            android:id="@+id/emailMonCompte"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:background="@color/lightblue"
@@ -130,12 +104,12 @@
             android:text="Mot de passe :"
             android:textColor="@color/black"
             android:textSize="25sp" />
-        <EditText
-            android:id="@+id/plain_text_input4"
+        <TextView
+            android:id="@+id/mdpMonCompte"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:background="@color/lightblue"
-            android:inputType="textPassword"
+            android:text="********"
             android:textSize="25sp"
             android:layout_marginRight="15dp"/>
 
@@ -152,11 +126,11 @@
             android:id="@+id/mdp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="50dp"
             android:background="@drawable/rounded_button"
             android:paddingHorizontal="20dp"
             android:paddingVertical="5dp"
-            android:text="Modifier le mot de passe"
+            android:text="Mot de passé oublié"
             android:textColor="@color/black"
             android:textSize="25sp"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -165,22 +139,7 @@
 
             />
 
-        <Button
-            android:id="@+id/historique"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="90dp"
-            android:background="@drawable/rounded_button"
-            android:paddingHorizontal="20dp"
-            android:paddingVertical="5dp"
-            android:text="Voir mon historique "
-            android:textColor="@color/black"
-            android:textSize="25sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
 
-            />
 
         <Button
             android:id="@+id/retour"

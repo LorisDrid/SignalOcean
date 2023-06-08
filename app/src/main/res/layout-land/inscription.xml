@@ -54,7 +54,7 @@
             android:textSize="25sp" />
 
         <EditText
-            android:id="@+id/plain_text_input"
+            android:id="@+id/nomInscription"
             android:layout_width="610dp"
             android:layout_height="wrap_content"
             android:background="@color/lightblue"
@@ -80,7 +80,7 @@
             android:textSize="25sp" />
 
         <EditText
-            android:id="@+id/plain_text_input"
+            android:id="@+id/prenomInscription"
             android:layout_width="578dp"
             android:layout_height="wrap_content"
             android:background="@color/lightblue"
@@ -106,7 +106,7 @@
             android:textSize="25sp" />
 
         <EditText
-            android:id="@+id/plain_text_input"
+            android:id="@+id/emailInscription"
             android:layout_width="521dp"
             android:layout_height="wrap_content"
             android:background="@color/lightblue"
@@ -132,7 +132,7 @@
             android:textSize="25sp" />
 
         <EditText
-            android:id="@+id/plain_text_input2"
+            android:id="@+id/motdepasseInscription"
             android:layout_width="515dp"
             android:layout_height="wrap_content"
             android:background="@color/lightblue"

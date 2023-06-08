@@ -39,7 +39,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="62dp"
         android:background="@color/white"
         android:gravity="center"
         android:orientation="horizontal">
@@ -49,44 +49,17 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10px"
-            android:text="Prénom :"
+            android:text="Nom/Prénom :"
             android:textColor="@color/black"
             android:textSize="25sp" />
 
         <EditText
-            android:id="@+id/plain_text_input"
+            android:id="@+id/displayName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="15dp"
             android:background="@color/lightblue"
-            android:inputType="textPersonName"
-            android:textSize="25sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="63dp"
-        android:background="@color/white"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="10px"
-            android:text="Nom :"
-            android:textColor="@color/black"
-            android:textSize="25sp" />
-
-        <EditText
-            android:id="@+id/plain_text_input2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="15dp"
-            android:background="@color/lightblue"
-            android:inputType="textPersonName"
+            android:inputType=""
             android:textSize="25sp" />
 
     </LinearLayout>
@@ -108,7 +81,7 @@
             android:textSize="25sp" />
 
         <EditText
-            android:id="@+id/plain_text_input3"
+            android:id="@+id/emailMonCompte"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="15dp"
@@ -135,12 +108,12 @@
             android:textSize="25sp" />
 
         <EditText
-            android:id="@+id/plain_text_input4"
+            android:id="@+id/mdpMonCompte"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="15dp"
             android:background="@color/lightblue"
-            android:inputType="textPassword"
+            android:text="********"
             android:textSize="25sp" />
 
     </LinearLayout>
@@ -156,32 +129,18 @@
             android:id="@+id/mdp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="16dp"
+            android:layout_marginStart="264dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="244dp"
             android:background="@drawable/rounded_button"
             android:paddingHorizontal="20dp"
             android:paddingVertical="5dp"
-            android:text="Modifier le mot de passe"
-            android:textColor="@color/black"
 
-            android:textSize="15sp"
-            app:layout_constraintRight_toRightOf="parent"
-            tools:layout_editor_absoluteY="29dp" />
-
-        <Button
-            android:id="@+id/historique"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:background="@drawable/rounded_button"
-            android:paddingHorizontal="20dp"
-            android:paddingVertical="5dp"
-            android:text="Voir mon historique "
+            android:text="Mot de passé oublié"
             android:textColor="@color/black"
             android:textSize="15sp"
-            app:layout_constraintHorizontal_bias="0.03"
-            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button

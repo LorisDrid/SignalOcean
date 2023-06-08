@@ -4,7 +4,6 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -22,7 +21,6 @@ import androidx.core.content.ContextCompat;
 
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
-import org.osmdroid.views.overlay.Marker;
 
 import java.io.ByteArrayOutputStream;
 import java.util.Optional;
@@ -103,7 +101,6 @@ public class CreatePostActivity extends AppCompatActivity {
                 AbstractPost post = abstractPostFactory.createPost(type, title, text, Optional.ofNullable(CreatePostActivity.this.imageUri), location);
                 MainActivity.userManager.getCurrentUser().addPost(post, CreatePostActivity.this);
 
-                Toast.makeText(CreatePostActivity.this, "type post = " + post.getType(), Toast.LENGTH_SHORT).show();
 
                 Toast.makeText(CreatePostActivity.this, "Post créé avec succès", Toast.LENGTH_SHORT).show();
                 int postCount = MainActivity.userManager.getCurrentUser().getPosts().size();
