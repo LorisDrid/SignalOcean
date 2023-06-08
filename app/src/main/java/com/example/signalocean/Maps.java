@@ -41,10 +41,15 @@ public class Maps extends AppCompatActivity {
         map = (MapView) findViewById(R.id.maps);
         map.setTileSource(TileSourceFactory.MAPNIK);//Utilisation du design patter factory
         map.setBuiltInZoomControls(true);//Zoomable
-        GeoPoint startPoint = new GeoPoint(43.65020, 7.00517);
+        // Initialiser le gestionnaire de localisation
+        myLocationOverlay = new MyLocationNewOverlay(new GpsMyLocationProvider(getApplicationContext()), map);
+        myLocationOverlay.enableMyLocation();
+        map.getOverlays().add(myLocationOverlay);
+        GeoPoint moi = myLocationOverlay.getMyLocation();
+        //GeoPoint startPoint = new GeoPoint(43.65020, 7.00517);
         IMapController mapController = map.getController();
         mapController.setZoom(18.0);
-        mapController.setCenter(startPoint);
+        mapController.setCenter(moi);
 
         ArrayList<OverlayItem> items = new ArrayList<>();
         OverlayItem home = new OverlayItem("Yacine le crack", " my office", new GeoPoint(43.65020, 7.00517));
@@ -52,10 +57,6 @@ public class Maps extends AppCompatActivity {
         items.add(home);
         items.add(new OverlayItem("fast-food", "mcdo", new GeoPoint(43.64020, 7.00517)));
 
-        // Initialiser le gestionnaire de localisation
-        myLocationOverlay = new MyLocationNewOverlay(new GpsMyLocationProvider(getApplicationContext()), map);
-        myLocationOverlay.enableMyLocation();
-        map.getOverlays().add(myLocationOverlay);
 
         ItemizedOverlayWithFocus<OverlayItem> mOverlay = new ItemizedOverlayWithFocus<OverlayItem>(getApplicationContext(),
                 items, new ItemizedIconOverlay.OnItemGestureListener<OverlayItem>() {
