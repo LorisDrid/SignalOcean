@@ -49,7 +49,7 @@ public class User {
         String notificationTitle = "Demande d'ami";
         String notificationMessage = this.getFirstName() + " " + this.getLastName() + " vous as ajouté en ami !";
 
-        Notification.createNotification(context, notificationTitle, notificationMessage, NotificationChannelManager.CHANNEL_ID_FRIEND_REQUEST);
+        Notification.createNotificationFriend(context, notificationTitle, notificationMessage, this);
     }
     public void removeFriend(User user){
         if(this.getFriends().contains(user)){
@@ -62,13 +62,9 @@ public class User {
     }
     public void addPost(AbstractPost post, Context context) {
         posts.add(post);
-
-        for (User friend : this.getFriends()) {
-            String notificationTitle = "Nouveau post de " + friend.getFirstName() + " " + friend.getLastName();
-            String notificationMessage = "Un ami a publié un nouveau post.";
-
-            Notification.createNotification(context, notificationTitle, notificationMessage, NotificationChannelManager.CHANNEL_ID_NEW_POST);
-        }
+        String notificationTitle = "Nouveau post de " + this.getFirstName() + " " + this.getLastName();
+        String notificationMessage = "Un ami a publié un nouveau post.";
+        Notification.createNotificationPost(context, notificationTitle, notificationMessage, post);
     }
 }
 
