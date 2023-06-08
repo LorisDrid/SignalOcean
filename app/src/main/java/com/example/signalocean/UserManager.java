@@ -11,7 +11,7 @@ public class UserManager {
 
     public UserManager() {
         this.users = new ArrayList<>();
-        User currentuser = new User("Bob", "Lennon", "pyrobarbare@gmail.com","fanta123");
+        User currentuser = new User("Lucas", "Hauchard", "lucashauchard@gmail.com","eskecbonpourvous");
         User user1 = new User("John", "Doe", "john.doe@example.com", "password1");
         User user2 = new User("Jane", "Smith", "jane.smith@example.com", "password2");
         User user3 = new User("Alice", "Johnson", "alice.johnson@example.com", "password3");

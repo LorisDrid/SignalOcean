@@ -40,7 +40,7 @@ public class MainActivity extends Activity {
             @Override
             public void run() {
                 String postTitle = "Sacrées vagues !";
-                String postText = "J'en ai fais tomber mon pastis, c'est que ça remue ces vagues.";
+                String postText = "J'en ai fait tomber mon Pastis, c'est que ça remue ces vagues.";
                 String imageName = "bateau_tempete"; // Nom de votre image sans extension
                 int imageResourceId = getResources().getIdentifier(imageName, "drawable", getPackageName());
                 Drawable drawable = ResourcesCompat.getDrawable(getResources(), imageResourceId, null);
@@ -77,7 +77,6 @@ public class MainActivity extends Activity {
             }
         }, 1000);
 
-        Toast.makeText(MainActivity.this, "notif ", Toast.LENGTH_SHORT).show();
         Button connecter = (Button) findViewById(R.id.se_connecter);
         connecter.setOnClickListener(new View.OnClickListener() {
             @Override

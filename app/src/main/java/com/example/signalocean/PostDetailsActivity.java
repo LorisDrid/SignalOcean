@@ -24,9 +24,6 @@ public class PostDetailsActivity extends AppCompatActivity {
         AbstractPost post = getIntent().getParcelableExtra("post");
         updateBackground(post);
         setPostInfos(post);
-        boolean isImageEmpty = post.getImage().equals(Optional.empty());
-        String toastMessage = "Is Image Empty: " + String.valueOf(isImageEmpty);
-        Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show();
         Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override

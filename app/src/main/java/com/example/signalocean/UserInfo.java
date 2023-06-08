@@ -25,7 +25,6 @@ public class UserInfo extends AppCompatActivity {
 
         listView = findViewById(R.id.listView);
         ArrayList<AbstractPost> posts = currentUser.getPosts();
-        Toast.makeText(UserInfo.this, "Nombre de posts : " + posts.size(), Toast.LENGTH_SHORT).show();
 
         PostAdapter<AbstractPost> adapter = new PostAdapter<>(this, posts, AbstractPost.class);
         listView.setAdapter(adapter);

@@ -102,9 +102,7 @@ public class CreatePostActivity extends AppCompatActivity {
                 MainActivity.userManager.getCurrentUser().addPost(post, CreatePostActivity.this);
 
 
-                Toast.makeText(CreatePostActivity.this, "Post créé avec succès", Toast.LENGTH_SHORT).show();
                 int postCount = MainActivity.userManager.getCurrentUser().getPosts().size();
-                Toast.makeText(CreatePostActivity.this, "Nombre de posts : " + postCount, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(CreatePostActivity.this, Maps.class);
                 startActivity(intent);
             }
