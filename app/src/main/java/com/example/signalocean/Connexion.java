@@ -28,6 +28,15 @@ public class Connexion extends Activity {
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
+        Button monCompte = (Button) findViewById(R.id.compte);
+        monCompte.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Connexion.this, Compte.class);
+                startActivity(intent);
+            }
+        });
+
         Button inscription = (Button) findViewById(R.id.inscription);
         inscription.setOnClickListener(new View.OnClickListener() {
             @Override
