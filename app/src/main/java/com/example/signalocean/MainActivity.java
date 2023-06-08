@@ -14,10 +14,15 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.firebase.FirebaseApp;
+
 public class MainActivity extends Activity {
 
     private static User currentUser;
     public static User friendUser;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,4 +68,5 @@ public class MainActivity extends Activity {
     public static User getCurrentUser() {
         return currentUser;
     }
+
 }

@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+
+
 public class Inscription extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
