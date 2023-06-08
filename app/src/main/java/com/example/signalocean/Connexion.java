@@ -60,8 +60,8 @@ public class Connexion extends Activity {
             @Override
             public void onClick(View v) {
                 // Get the email and password entered by the user
-                EditText emailEditText = findViewById(R.id.plain_text_input);
-                EditText passwordEditText = findViewById(R.id.plain_text_input2);
+                EditText emailEditText = findViewById(R.id.emailConnexion);
+                EditText passwordEditText = findViewById(R.id.motdepasseConnexion);
                 String email = emailEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
 
